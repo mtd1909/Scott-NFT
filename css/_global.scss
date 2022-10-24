@@ -1,0 +1,366 @@
+:root { 
+  --black: #000000;
+  --grey: #333333;
+  --white: #FFFFFF;
+  --title: #1c223a;
+  --text: #dee3e4;
+  --orange: #ef6838;
+}
+/***** Start Reset CSS *****/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  word-break: break-word;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  background: #292e34;
+  color: var(--white);
+  &.orange {
+    --btn: #ef6838;
+    --hover: #ec4f17;
+  }
+  &.yellow {
+    --btn: #ffc107;
+    --hover:#f7b900;
+  }
+  &.indigo {
+    --btn: #6610f2;
+    --hover:#570bd3;
+  }
+  &.blue {
+    --btn: #007bff;
+    --hover:#025de4;
+  }
+  &.purple {
+    --btn: #6f42c1;
+    --hover: #5f37a8;
+  }
+  &.cyan {
+    --btn: #17a2b8;
+    --hover: #0badce;
+  }
+  &.red {
+    --btn: #dc3545;
+    --hover: #ca2333;
+  }
+  &.pink {
+    --btn: #e83e8c;
+    --hover: #bf2672;
+  }
+  &.green {
+    --btn: #28a745;
+    --hover: #218a39;
+  }
+  &.teal {
+    --btn: #20c997;
+    --hover: #1baa80;
+  }
+}
+
+.container {
+  max-width: 1200px;
+  width: 100%;
+  padding: 0 15px;
+  margin: 0 auto;
+  @media (min-width: 576px) {
+    max-width: 540px;
+  }
+  @media (min-width: 768px) {
+    max-width: 720px;
+  }
+  @media (min-width: 992px) {
+    max-width: 960px;
+  }
+  @media (min-width: 1200px) {
+    max-width: 1140px;
+  }
+  @media (min-width: 1400px) {
+    max-width: 1320px;
+  }
+}
+
+.change__color {
+  position: fixed;
+  left: -214px;
+  transition: all 0.3s ease;
+  top: 30%;
+  z-index: 999999;
+  &.active {
+    left: 0;
+  }
+  .color__switcher {
+    background-color: var(--white);
+    color: #252b33;
+    padding: 18px;
+    h2 {
+      font-size: 18px;
+      font-weight: 500;
+      position: relative;
+      &:before {
+        content: '';
+        position: absolute;
+        height: 1px;
+        width: 100%;
+        background-color: #000000;
+        opacity: 0.1;
+        top: 40px;
+      }
+    }
+    .wrap__switcher {
+      flex-wrap: wrap;
+      margin-top: 30px;
+      margin-right: -12px;
+      .box__switcher {
+        width: calc((100% - 20px) / 5);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: all 0.3s ease-in-out;
+        .switch {
+          width: 25px;
+          height: 25px;
+          border-radius: 50%;
+          margin: 4px -6px 4px 0;
+          transition: all 0.3s ease-in-out;
+          cursor: pointer;
+          &.active {
+            transform: scale(0.65);
+          }
+          &.btn__orange {
+            background-color: #ef6838;
+          }
+          &.btn__yellow {
+            background-color: #ffc107;
+          }
+          &.btn__indigo {
+            background-color: #6610f2;
+          }
+          &.btn__blue {
+            background-color: #007bff;
+          }
+          &.btn__purple {
+            background-color: #6f42c1;
+          }
+          &.btn__cyan {
+            background-color: #17a2b8;
+          }
+          &.btn__red {
+            background-color: #dc3545;
+          }
+          &.btn__pink {
+            background-color: #e83e8c;
+          }
+          &.btn__green {
+            background-color: #28a745;
+          }
+          &.btn__teal {
+            background-color: #20c997;
+          }
+        }
+      }
+    } 
+  }
+  .setting {
+    background-color: #666;
+    border-radius: 0px 4px 4px 0;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    i {
+      font-size: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 40px;
+    }
+  }
+}
+
+.bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: -1;
+}
+
+.d-flex {
+  display: flex;
+}
+
+a {
+  display: inline-block;
+  text-decoration: none;
+  color: var(--white);
+  font-weight: 500;
+}
+
+li {
+  list-style-type: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.wrapper {
+  overflow: hidden;
+}
+
+.hidden {
+  overflow: hidden;
+}
+
+.menu_bars_overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background: #333;
+  z-index: 9;
+  opacity: 0.5;
+}
+
+.p72 {
+  padding-top: 72px;
+  padding-bottom: 72px;
+  @media (max-width: 991px) {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+  @media (max-width: 767px) {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+  @media (max-width: 575px) {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+}
+
+.btn {
+  color: var(--white);
+  font-size: 16px;
+  font-weight: 500;
+  display: inline-block;
+  padding: 13px 42px;
+  border-radius: 100px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  .fa-chevron-right {
+    font-size: 14px;
+    margin-left: 10px;
+  }
+}
+
+.btn__rounded {
+  background-color: var(--btn);
+  color: var(--white);
+  &-white {
+    background-color: var(--white);;
+    color: var(--black);
+    &:hover {
+      background-color: #d3d4d5;
+    }
+  }
+  &:hover {
+    background-color: var(--hover);
+  }
+}
+
+.title {
+  color: var(--white);
+  font-weight: 600;
+  &__h1 {
+    font-size: 72px;
+  }
+  &__h2 {
+    font-size: 48px;
+  }
+  &__section {
+    font-size: 36px;
+  }
+}
+
+.text {
+  color: var(--text);
+  margin-bottom: 10px;
+}
+
+.section__title {
+  position: relative;
+  h2 {
+    font-size: 132px;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.5);
+    text-transform: uppercase;
+    opacity: 0.1;
+    text-align: center;
+    line-height: 1.3;
+  }
+  .section__subtitle {
+    font-size: 36px;
+    font-weight: 600;
+    position: absolute;
+    left: 50%;
+    top: 56px;
+    transform: translateX(-50%);
+    &:before {
+      position: absolute;
+      content: '';
+      width: 80px;
+      height: 3px;
+      background-color: var(--btn);
+      left: 50%;
+      transform: translateX(-50%);
+      top: 54px;
+    }
+  }
+}
+
+.back-to-top {
+  font-size: 24px;
+  width: 45px;
+  height: 45px;
+  line-height: 45px;
+  text-align: center;
+  display: none;
+  position: fixed;
+  bottom: 230px;
+  right: 20px;
+  z-index: 999;
+  border-radius: 5px;
+  background: #44bbff;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+  transition: all 0.4s ease-in-out;
+  color: var(--white);
+  animation: float 1500ms infinite ease-in-out;
+  &.open {
+    bottom: 30px;
+  }
+  &:hover {
+    background: var(--white);
+    color: var(--orange);
+  }
+}
+
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    transform: translate3d(0,-100%,0);
+  }
+  100% {
+    opacity: 1;
+    transform: translateZ(0);
+  }
+}
